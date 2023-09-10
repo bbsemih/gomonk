@@ -6,9 +6,9 @@ import (
 
 type Lexer struct {
 	input        string
-	position     int  //representing the current position in the input string
-	readPosition int  //always points to the next character in the input to be read
-	ch           byte //a byte representing the current character being examined.
+	position     int //representing the current position in the input string
+	readPosition int //points to the next character in the input to be read
+	ch           byte
 }
 
 func New(input string) *Lexer {
