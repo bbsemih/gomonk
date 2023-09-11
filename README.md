@@ -1,3 +1,5 @@
-# gomonk
+# xgo
 
-interpreter for the monkey language in go!
+interpreter for the xgo language in go!
+
+xgo is the programming language i'm designing just for fun!
