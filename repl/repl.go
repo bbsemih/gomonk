@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/bbsemih/gomonk/lexer"
-	"github.com/bbsemih/gomonk/token"
+	"github.com/bbsemih/xgo/lexer"
+	"github.com/bbsemih/xgo/token"
 )
 
 const PROMPT = ">> "

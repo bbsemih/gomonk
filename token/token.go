@@ -34,7 +34,7 @@ const (
 	RBRACE    = "}"
 
 	FUNCTION = "FUNCTION"
-	LET      = "LET"
+	TAN      = "TAN"
 	IF       = "IF"
 	ELSE     = "ELSE"
 	TRUE     = "TRUE"
@@ -43,13 +43,13 @@ const (
 )
 
 var keywords = map[string]TokenType{
-	"fn":     FUNCTION,
-	"let":    LET,
-	"if":     IF,
-	"else":   ELSE,
-	"true":   TRUE,
-	"false":  FALSE,
-	"return": RETURN,
+	"fu":    FUNCTION,
+	"tan":   TAN,
+	"if":    IF,
+	"else":  ELSE,
+	"true":  TRUE,
+	"false": FALSE,
+	"re":    RETURN,
 }
 
 func LookUpIdent(ident string) TokenType {

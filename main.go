@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/user"
 
-	"github.com/bbsemih/gomonk/repl"
+	"github.com/bbsemih/xgo/repl"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Hello %s! This is the Monkey programming language!\n", user.Username)
+	fmt.Printf("Hello %s! This is the xgo programming language!\n", user.Username)
 	fmt.Printf("Feel free to type in commands...\n")
 	repl.Start(os.Stdin, os.Stdout)
 }

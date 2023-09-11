@@ -4,7 +4,7 @@ package ast
 // this needed to be done because we need to parse the code and create a tree representation of it
 // source code > lexer > tokens > parser > AST > interpreter
 
-import "github.com/bbsemih/gomonk/token"
+import "github.com/bbsemih/xgo/token"
 
 // every node in AST has to implement the Node interface
 type Node interface {
@@ -21,7 +21,7 @@ type Expression interface {
 	expressionNode()
 }
 
-// every valid monkey program is a series of statements
+// every valid xgo program is a series of statements
 type Program struct {
 	Statements []Statement
 }
@@ -34,14 +34,14 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
-type LetStatement struct {
+type TanStatement struct {
 	Token token.Token
 	Name  *Identifier
 	Value Expression
 }
 
-func (ls *LetStatement) statementNode() {}
-func (ls *LetStatement) TokenLiteral() string {
+func (ls *TanStatement) statementNode() {}
+func (ls *TanStatement) TokenLiteral() string {
 	return ls.Token.Literal
 }
 

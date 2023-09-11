@@ -1,15 +1,14 @@
 package parser
 
 import (
-	"github.com/bbsemih/gomonk/ast"
+	"github.com/bbsemih/xgo/ast"
 
-	"github.com/bbsemih/gomonk/token"
+	"github.com/bbsemih/xgo/token"
 
-	"github.com/bbsemih/gomonk/lexer"
+	"github.com/bbsemih/xgo/lexer"
 )
 
 type Parser struct {
-	// l is a pointer to an instance of the lexer
 	l *lexer.Lexer
 
 	curToken  token.Token

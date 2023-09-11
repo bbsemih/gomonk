@@ -3,25 +3,25 @@ package lexer
 import (
 	"testing"
 
-	"github.com/bbsemih/gomonk/token"
+	"github.com/bbsemih/xgo/token"
 )
 
 func TestNextToken(t *testing.T) {
-	input := `let five = 5;
-	let twentyone = 21;
-	let add = fn(x, y) {
+	input := `tan five = 5;
+	tan twentyone = 21;
+	tan add = fu(x, y) {
 		x + y;
 	};
-	let result = add(five, twentyone);
-	let floatnum = 0.1923
+	tan result = add(five, twentyone);
+	tan floatnum = 0.1923
 
 	!-/*5;
  	5 < 10 > 5;
 
 	if (5 < 10) {
-		return true;
+		re true;
 	} else {
-		return false;
+		re false;
 	}
 	10 == 10; 10 != 9;
 	`
@@ -30,20 +30,20 @@ func TestNextToken(t *testing.T) {
 		expectedType    token.TokenType
 		expectedLiteral string
 	}{
-		{token.LET, "let"},
+		{token.TAN, "tan"},
 		{token.IDENT, "five"},
 		{token.ASSIGN, "="},
 		{token.INT, "5"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.TAN, "tan"},
 		{token.IDENT, "twentyone"},
 		{token.ASSIGN, "="},
 		{token.INT, "21"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.TAN, "tan"},
 		{token.IDENT, "add"},
 		{token.ASSIGN, "="},
-		{token.FUNCTION, "fn"},
+		{token.FUNCTION, "fu"},
 		{token.LPAREN, "("},
 		{token.IDENT, "x"},
 		{token.COMMA, ","},
@@ -56,7 +56,7 @@ func TestNextToken(t *testing.T) {
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.TAN, "tan"},
 		{token.IDENT, "result"},
 		{token.ASSIGN, "="},
 		{token.IDENT, "add"},
@@ -66,7 +66,7 @@ func TestNextToken(t *testing.T) {
 		{token.IDENT, "twentyone"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "let"},
+		{token.TAN, "tan"},
 		{token.IDENT, "floatnum"},
 		{token.ASSIGN, "="},
 		{token.FLOAT, "0.1923"},
@@ -89,13 +89,13 @@ func TestNextToken(t *testing.T) {
 		{token.INT, "10"},
 		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
-		{token.RETURN, "return"},
+		{token.RETURN, "re"},
 		{token.TRUE, "true"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
 		{token.ELSE, "else"},
 		{token.LBRACE, "{"},
-		{token.RETURN, "return"},
+		{token.RETURN, "re"},
 		{token.FALSE, "false"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
