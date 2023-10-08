@@ -40,9 +40,19 @@ type TanStatement struct {
 	Value Expression
 }
 
+type ReturnStatement struct {
+	Token       token.Token
+	ReturnValue Expression
+}
+
 func (ls *TanStatement) statementNode() {}
 func (ls *TanStatement) TokenLiteral() string {
 	return ls.Token.Literal
+}
+
+func (rs *ReturnStatement) statementNode() {}
+func (rs *ReturnStatement) TokenLiteral() string {
+	return rs.Token.Literal
 }
 
 type Identifier struct {
